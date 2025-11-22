@@ -1,13 +1,15 @@
 # MediaClay Roadmap
 
-**Mission:** To build a hyper-scalable, distributed structural engine ("Clay") that organizes information for the symbiotic era of human and AI interaction. MediaClay is not just a CMS or application backend; it is a universal taxonomy protocol designed to be the foundational data layer for intelligent systems.
+**Mission:** To build a hyper-scalable, distributed structural engine ("Clay") that organizes information for the symbiotic era of human and AI interaction. MediaClay is not just a CMS or application backend; it is a universal taxonomy protocol designed to be a foundational data-application layer for intelligent systems.
+
+**History:** Originally forged in the transitional era of the early year 2000 internet, MediaClay was a visionary system designed to liberate creative expression from the technical constraints of raw code. It operated as a proprietary engine that empowered non-technical users to build dynamic websites long before modern standards made such digital freedom commonplace.
 
 ## I. Architectural Philosophy
 
 1.  **Agent-Native Design:** The system is built primarily to be read, understood, and manipulated by AI Agents (LLMs) via standard protocols (MCP), with human interfaces serving as a view layer on top.
-2.  **Performance as a Feature:** We reject "database bottlenecks." The architecture decouples read/write paths, utilizes async streaming, and leverages Rust’s zero-cost abstractions to handle massive concurrency.
+2.  **Performance as a Feature:** We reject "database bottlenecks." The architecture decouples read/write paths, utilizes async streaming, and leverages Rust’s zero-cost abstractions to handle massive concurrency and distributed and highly scalable redis caches for read oprations.
 3.  **Universal Structure:** We collapse complex abstractions into a singular, flexible concept: **Clay Structures**. This allows for arbitrary depth, polymorphism, and relationship modeling without rigid schema constraints.
-4.  **Protocol First:** Interaction happens via strictly typed, high-performance standards (gRPC, HTTP/3, GraphQL) rather than custom application logic.
+4.  **Protocol First:** Interaction happens via strictly typed, high-performance standards (gRPC, HTTP/3, GraphQL) rather than custom application logic for maximum leverage.
 
 ---
 
