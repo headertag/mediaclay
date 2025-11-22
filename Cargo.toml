@@ -3,32 +3,13 @@ members = ["api", "shared", "engine"]
 resolver = "2"
 
 [workspace.dependencies]
-# --- CORE RUNTIME ---
 tokio = { version = "1", features = ["full"] }
-thiserror = "1.0"
-config = "0.14"
-dotenvy = "0.15"
-
-# --- WEB & API ---
 axum = { version = "0.7", features = ["macros", "multipart"] }
 shuttle-axum = "0.48.0"
 shuttle-runtime = "0.48.0"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-postcard = "1.0"
-
-# --- DATA ---
+tracing = "0.1"
 sqlx = { version = "0.8", features = ["postgres", "runtime-tokio", "tls-rustls", "uuid", "chrono", "json"] }
-deadpool-redis = "0.14"
-
-# --- GRPC ---
 tonic = "0.12"
 prost = "0.13"
-tonic-build = "0.12"
-
-# --- UTILS ---
-uuid = { version = "1.10", features = ["v4", "serde"] }
-chrono = { version = "0.4", features = ["serde"] }
-argon2 = "0.5"
-tracing = "0.1"
-tracing-subscriber = { version = "0.3", features = ["env-filter"] }
