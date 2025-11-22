@@ -1,0 +1,70 @@
+[package]
+name = "mediaclay"
+version = "0.1.0"
+edition = "2021"
+authors = ["MediaClay Team"]
+description = "Universal structural engine for Human/Agent symbiosis"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[workspace]
+members = [
+    "core",      # The shared library (domain logic)
+    "api",       # The public gateway (Axum)
+    "engine",    # The internal structural service (gRPC)
+]
+
+[dependencies]
+# --- CORE RUNTIME ---
+# The async engine that powers everything.
+tokio = { version = "1", features = ["full"] }
+# Error handling library (industry standard)
+thiserror = "1.0"
+# Application configuration
+config = "0.14"
+# Environment variables
+dotenvy = "0.15"
+
+# --- WEB & API (AXUM) ---
+# The web framework.
+axum = { version = "0.7", features = ["macros", "multipart"] }
+# Serde is for "Serializing/Deserializing" data (making it JSON/Binary)
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+# Binary serialization (faster than JSON for internal caching)
+postcard = "1.0"
+
+# --- DATA LAYER (SQLx) ---
+# Database driver. strictly async, compile-time checked.
+# Features:
+#  - postgres: Support for Postgres
+#  - runtime-tokio: Use the Tokio runtime
+#  - tls-rustls: Use Rust-native SSL (no OpenSSL dependency hell)
+#  - uuid, chrono, json: Map these types directly to Rust structs
+sqlx = { version = "0.8", features = ["postgres", "runtime-tokio", "tls-rustls", "uuid", "chrono", "json"] }
+# Redis connection pool
+deadpool-redis = "0.14"
+
+# --- MICROSERVICES (gRPC) ---
+# The gRPC framework.
+tonic = "0.12"
+# Protocol Buffers support
+prost = "0.13"
+
+# --- OBSERVABILITY ---
+# Distributed tracing (essential for debugging async systems)
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+opentelemetry = "0.24"
+
+# --- UTILITIES ---
+# For handling UUIDs
+uuid = { version = "1.10", features = ["v4", "serde"] }
+# For handling Timestamps
+chrono = { version = "0.4", features = ["serde"] }
+# For hashing (passwords/IDs)
+argon2 = "0.5"
+
+[build-dependencies]
+# Needed to compile .proto files for gRPC
+tonic-build = "0.12"
