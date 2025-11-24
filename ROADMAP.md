@@ -2,7 +2,7 @@
 
 **Mission:** To build a hyper-scalable, distributed structural engine ("Clay") that organizes information for the symbiotic era of human and AI interaction. MediaClay is not just a CMS or application backend; it is a universal taxonomy protocol designed to be a foundational data-application layer for intelligent systems.
 
-**History:** Originally forged in the transitional era of the early year 2000 internet, MediaClay was a visionary system designed to liberate creative expression from the technical constraints of raw code. It operated as a proprietary engine that empowered non-technical users to build dynamic websites long before modern standards made such digital freedom commonplace.
+**History:** Originally forged in the transitional era of the [early year 2000 Internet](https://web.archive.org/web/20010221213055/http://mediaclay.com/), MediaClay was a visionary system designed to liberate creative expression from the technical constraints of raw code. It operated as a proprietary engine that empowered non-technical users to build dynamic websites long before modern standards made such digital freedom commonplace.
 
 ## I. Architectural Philosophy
 
