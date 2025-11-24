@@ -12,3 +12,19 @@ serde = { workspace = true }
 serde_json = { workspace = true }
 tracing = { workspace = true }
 shared = { path = "../shared" }
+
+[dev-dependencies]
+axum-test = "14"
+
+[profile.dev]
+codegen-units = 1
+lto = "fat"
+overflow-checks = true
+
+[profile.release]
+codegen-units = 1
+lto = "fat"
+overflow-checks = true
+
+[lints.clippy]
+pedantic = "warn"
