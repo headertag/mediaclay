@@ -1,5 +1,4 @@
 use axum::{routing::get, Router};
-use axum_test::TestServer; // Add this import
 
 async fn hello_world() -> &'static str {
     "Hello from MediaClay API!"
@@ -16,6 +15,7 @@ async fn main() -> shuttle_axum::ShuttleAxum {
 mod tests {
     use super::*;
     use shuttle_axum::ShuttleAxum; // Import ShuttleAxum
+    use axum_test::TestServer;
 
     async fn create_test_app() -> Router {
         let shuttle_axum_service: ShuttleAxum = main().await.expect("Failed to create app");
